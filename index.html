@@ -12,7 +12,7 @@
 	<br>
 	<br>
 	<br>
-	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/blob/gh-pages/index.html#L20-L110">code</a>
+	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/blob/gh-pages/index.html#L20-L110">c0de</a>
 	
 	<script type="text/javascript" id="script">      
 
@@ -31,11 +31,11 @@
 		 return {vco, vca};
 	     }
 
-	     var oone =  create('sine');
-	     var otwo =  create('square');
+	     var oone =  create('square');
+	     var otwo =  create('sine');
 	     var othree =  create('sine');
 	     
-	     note = function(frequency, t, type, gain, o) {
+	     note = function(frequency, t, gain, o) {
 		 o.vco.frequency.setValueAtTime(frequency, t);
 		 o.vca.gain.setValueAtTime(gain, t);
 	     };
@@ -72,9 +72,9 @@
 
 	     play = (arr) => {
 		 for (let i = 0; i < arr.length; i++) {
-		     note(freq(arr[i] + 12), 1 + i / 11, 'square', 0.1, oone);
-		     note(freq(arr[i]), 1 + i / 11, 'sine', 0.4, otwo);
-		     note(freq(arr[i] - 12), 1 + i / 11, 'sine', 0.6, othree);
+		     note(freq(arr[i] + 12), 1 + i / 11, 0.1, oone);
+		     note(freq(arr[i]), 1 + i / 11, 0.4, otwo);
+		     note(freq(arr[i] - 12), 1 + i / 11, 0.5, othree);
 		 }
 
 		 oone.vco.stop(1 + arr.length / 11);
