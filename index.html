@@ -12,7 +12,7 @@
 	<br>
 	<br>
 	<br>
-	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/tree/gh-pages">c0de</a>
+	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/tree/gh-pages">code</a>
 	
 	<script type="text/javascript" id="script">      
 
@@ -67,8 +67,8 @@
 
 	     play = (arr) => {
 		 for (let i = 0; i < arr.length; i++) {
-		     note(freq(arr[i] + 12), 1 + i / 15, 'square', 0.2);
-		     note(freq(arr[i]), 1 + i / 15, 'sine', 0.3);
+		     note(freq(arr[i]), 1 + i / 15, 'square', 0.2);
+		     note(freq(arr[i]-12), 1 + i / 15, 'sine', 0.3);
 		     note(freq(arr[i]-24), 1 + i / 15, 'sine', 0.4);
 		 }
 	     }
