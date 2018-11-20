@@ -14,42 +14,51 @@
 	<br>
 	<br>
 	<br>
-	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/blob/gh-pages/index.html#L20-L110">K0DE</a>
+	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/blob/gh-pages/index.html#L20-L110">CODE</a>
 	
 	<script type="text/javascript" id="script">      
 
-	  window.doit = () => {
+	 window.doit = () => {
 
-	      window.AudioContext = window.AudioContext || window.webkitAudioContext;
-	      if (window.AudioContext) {
-		  window.audioContext = new window.AudioContext();
-	      }
-	      var fixAudioContext = function (e) {
-		  if (window.audioContext) {
-		      // Create empty buffer
-		      var buffer = window.audioContext.createBuffer(1, 1, 22050);
-		      var source = window.audioContext.createBufferSource();
-		      source.buffer = buffer;
-		      // Connect to output (speakers)
-		      source.connect(window.audioContext.destination);
-		      // Play sound
-		      if (source.start) {
-			  source.start(0);
-		      } else if (source.play) {
-			  source.play(0);
-		      } else if (source.noteOn) {
-			  source.noteOn(0);
-		      }
-		  }
-		  // Remove events
-		  document.removeEventListener('touchstart', fixAudioContext);
-		  document.removeEventListener('touchend', fixAudioContext);
-	      };
-	      
-	      // iOS 6-8
-	      document.addEventListener('touchstart', fixAudioContext);
-	      // iOS 9
-	      document.addEventListener('touchend', fixAudioContext);
+	     window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	     try {
+		 if (window.AudioContext) {
+		     window.audioContext = new window.AudioContext();
+		 }
+		 else {
+		     alert('Buy a new phone :(')
+		 }
+	     }
+	     catch () {
+		 alert('Buy a new phone')
+	     }
+	     
+	     var fixAudioContext = function (e) {
+		 if (window.audioContext) {
+		     // Create empty buffer
+		     var buffer = window.audioContext.createBuffer(1, 1, 22050);
+		     var source = window.audioContext.createBufferSource();
+		     source.buffer = buffer;
+		     // Connect to output (speakers)
+		     source.connect(window.audioContext.destination);
+		     // Play sound
+		     if (source.start) {
+			 source.start(0);
+		     } else if (source.play) {
+			 source.play(0);
+		     } else if (source.noteOn) {
+			 source.noteOn(0);
+		     }
+		 }
+		 // Remove events
+		 document.removeEventListener('touchstart', fixAudioContext);
+		 document.removeEventListener('touchend', fixAudioContext);
+	     };
+	     
+	     // iOS 6-8
+	     document.addEventListener('touchstart', fixAudioContext);
+	     // iOS 9
+	     document.addEventListener('touchend', fixAudioContext);
 	     
 
 	     var context = window.audioContext;
