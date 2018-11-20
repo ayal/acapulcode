@@ -14,52 +14,26 @@
 	<br>
 	<br>
 	<br>
-	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/blob/gh-pages/index.html#L20-L110">C0DE</a>
+	<a style="color:grey;background:white;font-size:13px" target="_blank" href="https://github.com/ayal/acapulcode/blob/gh-pages/index.html#L20-L110">KKK</a>
 	
 	<script type="text/javascript" id="script">      
 
 	 window.doit = () => {
 
-	     window.AudioContext = window.AudioContext || window.webkitAudioContext;
 	     try {
+		 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 		 if (window.AudioContext) {
 		     window.audioContext = new window.AudioContext();
 		 }
 		 else {
 		     alert('Buy a new phone :(')
+		     return;
 		 }
 	     }
 	     catch (exx) {
 		 alert('Buy a new phone')
+		 return;
 	     }
-	     
-	     var fixAudioContext = function (e) {
-		 if (window.audioContext) {
-		     // Create empty buffer
-		     var buffer = window.audioContext.createBuffer(1, 1, 22050);
-		     var source = window.audioContext.createBufferSource();
-		     source.buffer = buffer;
-		     // Connect to output (speakers)
-		     source.connect(window.audioContext.destination);
-		     // Play sound
-		     if (source.start) {
-			 source.start(0);
-		     } else if (source.play) {
-			 source.play(0);
-		     } else if (source.noteOn) {
-			 source.noteOn(0);
-		     }
-		 }
-		 // Remove events
-		 document.removeEventListener('touchstart', fixAudioContext);
-		 document.removeEventListener('touchend', fixAudioContext);
-	     };
-	     
-	     // iOS 6-8
-	     document.addEventListener('touchstart', fixAudioContext);
-	     // iOS 9
-	     document.addEventListener('touchend', fixAudioContext);
-	     
 
 	     var context = window.audioContext;
 
@@ -116,14 +90,14 @@
 
 	     play = (arr) => {
 		 for (let i = 0; i < arr.length; i++) {
-		     note(freq(arr[i] + 12), 1 + i / 11, 0.2, oone);
+//		     note(freq(arr[i] + 12), 1 + i / 11, 0.2, oone);
 		     note(freq(arr[i]), 1 + i / 11, 0.4, otwo);
-		     note(freq(arr[i] - 12), 1 + i / 11, 0.4, othree);
+//		     note(freq(arr[i] - 12), 1 + i / 11, 0.4, othree);
 		 }
 
-		 oone.vco.stop(1 + arr.length / 11);
+//		 oone.vco.stop(1 + arr.length / 11);
 		 otwo.vco.stop(1 + arr.length / 11);
-		 othree.vco.stop(1 + arr.length / 11);
+//		 othree.vco.stop(1 + arr.length / 11);
 	     }
 	     
 	     var F2 = [40, 41, 45, 48];
